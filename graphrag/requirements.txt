@@ -1,0 +1,11 @@
+asyncio
+functions-framework
+graphrag
+pandas
+pydantic
+requests
+tiktoken
+typing
+uuid
+fastapi
+uvicorn
