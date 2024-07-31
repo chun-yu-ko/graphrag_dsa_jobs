@@ -9,3 +9,4 @@ typing
 uuid
 fastapi
 uvicorn
+google-cloud-storage

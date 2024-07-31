@@ -1,5 +1,5 @@
-from app.main import app
 import uvicorn
+from app.main import app
 from app.settings import PORT
 from app.utils import logger
 
