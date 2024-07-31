@@ -5,8 +5,6 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 INPUT_DIR = os.path.join(BASE_DIR, "artifacts")
 LANCEDB_URI = os.path.join(BASE_DIR, "artifacts/lancedb")
 
-PORT = 8012
-
 API_KEY = os.getenv("OPENAI_API_KEY")
 API_BASE = "https://api.openai.com/v1"
 
