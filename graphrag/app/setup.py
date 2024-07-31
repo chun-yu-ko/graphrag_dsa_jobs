@@ -4,6 +4,7 @@ import tiktoken
 import pandas as pd
 from app.utils import logger
 from app.settings import INPUT_DIR, LANCEDB_URI, API_KEY, API_BASE
+from app.prompt import LOCAL_SEARCH_SYSTEM_PROMPT
 from graphrag.query.llm.oai.chat_openai import ChatOpenAI
 from graphrag.query.llm.oai.embedding import OpenAIEmbedding
 from graphrag.query.llm.oai.typing import OpenaiApiType
@@ -21,7 +22,6 @@ from graphrag.query.structured_search.local_search.search import LocalSearch
 from graphrag.query.structured_search.global_search.community_context import GlobalCommunityContext
 from graphrag.query.structured_search.global_search.search import GlobalSearch
 from graphrag.vector_stores.lancedb import LanceDBVectorStore
-from prompt import LOCAL_SEARCH_SYSTEM_PROMPT
 
 async def setup_llm_and_embedder():
     logger.info("Setting up LLM and embedder")
