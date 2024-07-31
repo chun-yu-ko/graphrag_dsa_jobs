@@ -21,6 +21,7 @@ from graphrag.query.structured_search.local_search.search import LocalSearch
 from graphrag.query.structured_search.global_search.community_context import GlobalCommunityContext
 from graphrag.query.structured_search.global_search.search import GlobalSearch
 from graphrag.vector_stores.lancedb import LanceDBVectorStore
+from prompt import LOCAL_SEARCH_SYSTEM_PROMPT
 
 async def setup_llm_and_embedder():
     logger.info("Setting up LLM and embedder")
@@ -81,6 +82,7 @@ async def setup_search_engines(llm, token_encoder, text_embedder, entities, rela
         llm=llm,
         context_builder=local_context_builder,
         token_encoder=token_encoder,
+        system_prompt=LOCAL_SEARCH_SYSTEM_PROMPT,
         llm_params={"max_tokens": 2_000, "temperature": 0.0},
         context_builder_params={
             "text_unit_prop": 0.5,

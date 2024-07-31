@@ -1,7 +1,9 @@
 from app.main import app
 import uvicorn
 from app.settings import PORT
-from app.utils import logger
+from app.utils import logger, download_artifacts
+
+download_artifacts()
 
 if __name__ == "__main__":
     logger.info(f"Starting server on port {PORT}")
