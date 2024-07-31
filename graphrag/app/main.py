@@ -3,11 +3,12 @@ import pandas as pd
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
 from app.handlers import chat_completions, list_models
-from app.utils import logger
+from app.utils import logger, download_artifacts
 from app.settings import INPUT_DIR, LANCEDB_URI, PORT
 from app.setup import setup_llm_and_embedder, load_context, setup_search_engines
 from app.models import ChatCompletionRequest
 
+download_artifacts()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
